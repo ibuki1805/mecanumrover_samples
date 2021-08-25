@@ -71,7 +71,7 @@
       </collision>
       <inertial>
         <xacro:cylinder_inertial mass="0.01225" radius="0.00956" length="0.0381" />
-      </inertial>  
+      </inertial>
 
     </link>
     <gazebo reference="${prefix}_barrel${num}_link">
@@ -123,7 +123,7 @@
       </collision>
       <inertial>
         <xacro:cylinder_inertial mass="0.880" radius="0.02225" length="0.1215" />
-      </inertial>  
+      </inertial>
 
     </link>
     <gazebo reference="${prefix}_body_link">
@@ -166,7 +166,7 @@
       </collision>
       <inertial>
         <xacro:cylinder_inertial mass="0.43525" radius="0.048" length="0.04572" />
-      </inertial>  
+      </inertial>
 
     </link>
     <gazebo reference="${prefix}_shaft_link">
@@ -187,7 +187,7 @@
       <inertial>
         <mass value="0.010"/>
         <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
-      </inertial> 
+      </inertial>
     </link>
 
     <xacro:sus prefix="${prefix}"/>
@@ -208,7 +208,7 @@
       <inertial>
         <mass value="0.010"/>
         <inertia ixx="0.0001" ixy="0" ixz="0" iyy="0.0001" iyz="0" izz="0.0001"/>
-      </inertial> 
+      </inertial>
     </link>
 
     <xacro:sus prefix="${prefix}"/>
@@ -242,7 +242,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="14.004" height="0.135" width="0.28" depth="0.34" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="body_link">
@@ -307,7 +307,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.0780" height="0.003" width="0.12" depth="0.0885" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="board_${prefix}_link">
@@ -355,7 +355,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.016" height="0.02096" width="0.104" depth="0.01251" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="bumper_${prefix}_${num}_link">
@@ -388,7 +388,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.195" height="0.0125" width="0.053" depth="0.26" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="bumper_baseboard_${prefix}_link">
@@ -425,7 +425,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.038" height="0.003" width="0.03371" depth="0.3262" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="bumper_board_${prefix}_link">
@@ -454,10 +454,10 @@
 
 
   <!-- base attachment(LiDER,emergency button,wyreless charge) board(front) -->
-  <!--  upper side  --> 
+  <!--  upper side  -->
 <!--  <xacro:optionattachboard prefix="front" xyz="0.157 0 0.1665" z_dir="0" /> -->
   <!--  lower side  -->
-  <xacro:optionattachboard prefix="front" xyz="0.157 0 0.1585" z_dir="0" />   
+  <xacro:optionattachboard prefix="front" xyz="0.157 0 0.1585" z_dir="0" />
 
   <!-- base attachment(LiDER,emergency button,wyreless charge) board(back) -->
   <!--  upper side  -->
@@ -469,12 +469,14 @@
 
   <!-- LiDER  -->
   <joint name="lider_joint" type="fixed">
-    <parent link="board_front_link"/>
+    <!-- <parent link="board_front_link"/> -->
+    <parent link="base_link"/>
     <child  link="lider_link"/>
   <!-- attach upper side -->
 <!--    <origin xyz="0.042 0 0.0570" rpy="0 0 0"/> -->
   <!-- attach lower side -->
-    <origin xyz="0.042 0 -0.0570" rpy="${radians(180)} 0 0"/>  
+    <!-- <origin xyz="0.042 0 &#45;0.0570" rpy="${radians(180)} 0 0"/>   -->
+    <origin xyz="0.0 0 0.4" rpy="${radians(0)} 0 0"/>
   </joint>
   <link name="lider_link">
     <visual>
@@ -490,7 +492,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.160" height="0.07" width="0.05" depth="0.05" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="lider_link">
@@ -548,7 +550,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.48" height="0.3026" width="0.03" depth="0.0294" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="button_link">
@@ -578,7 +580,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.222" height="0.08" width="0.078" depth="0.026" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="charger_attach_link">
@@ -624,7 +626,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="1.678" height="0.11" width="0.16" depth="0.0781" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="charger_link">
@@ -659,7 +661,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="0.16" height="0.003" width="0.27" depth="0.095" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="board_center_link">
@@ -686,7 +688,7 @@
     </collision>
     <inertial>
         <xacro:box_inertial mass="1.18" height="0.0352" width="0.117" depth="0.112" />
-    </inertial>  
+    </inertial>
 
   </link>
   <gazebo reference="nuc_link">

@@ -9,7 +9,7 @@ rosserialを使ってROSとメカナムローバーを接続し、PCにゲーム
 <launch>
   <!-- joy node -->
   <node pkg="joy" type="joy_node" name="mecanumrover_joy" respawn="true" >
-    <param name="dev" type="string" value="/dev/input/js0" /> <!-- デバイスファイルパスを正しく設定してください -->
+    <param name="dev" type="string" value="/dev/input/js1" /> <!-- デバイスファイルパスを正しく設定してください -->
     <param name="deadzone" value="0.1"/>
   </node>
 
@@ -22,6 +22,6 @@ rosserialを使ってROSとメカナムローバーを接続し、PCにゲーム
     <param name="scale_angular" value="1.0" />
     <param name="safety_button" value="7" />
   </node>
-    
+
 
 </launch>
