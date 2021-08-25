@@ -476,7 +476,7 @@
 <!--    <origin xyz="0.042 0 0.0570" rpy="0 0 0"/> -->
   <!-- attach lower side -->
     <!-- <origin xyz="0.042 0 &#45;0.0570" rpy="${radians(180)} 0 0"/>   -->
-    <origin xyz="0.0 0 0.4" rpy="${radians(0)} 0 0"/>
+    <origin xyz="0.0 0 0.4" rpy="${radians(0)} ${radians(5)} 0"/>
   </joint>
   <link name="lider_link">
     <visual>
@@ -497,7 +497,7 @@
   </link>
   <gazebo reference="lider_link">
     <material>Gazebo/Black</material>
-    <sensor type="ray" name="lrf_sensor">
+    <sensor type="gpu_ray" name="lrf_sensor">
       <pose>0 0 0 0 0 0</pose>
       <visualize>true</visualize>
       <update_rate>40</update_rate>
@@ -521,7 +521,7 @@
           <stddev>0.03</stddev>
         </noise>
       </ray>
-      <plugin name="gazebo_ros_lrf_controller" filename="libgazebo_ros_laser.so">
+      <plugin name="gazebo_ros_lrf_controller" filename="libgazebo_ros_gpu_laser.so">
         <topicName>/scan</topicName>
         <frameName>laser</frameName>
       </plugin>
